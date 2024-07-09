@@ -14,67 +14,30 @@ class _StepperPageState extends State<StepperPage> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: Text(
-          'Flutter Stepper Demo',
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-      body: Column(
-        children: [
-          Stepper(
-            currentStep: _index,
-            onStepCancel: () {
-              if (_index > 0) {
+        title: Text('Flutter Stepper Demo', style: TextStyle(color: Colors.white),),),
+      body: Column(children: [
+          Stepper(currentStep: _index, onStepCancel: () {
+            if (_index > 0) {
                 setState(() {
-                  _index -= 1;
-                });
-              }
-            },
+                  _index -= 1;});}},
             onStepContinue: () {
               if (_index <= 0) {
                 setState(() {
-                  _index += 1;
-                });
-              }
-            },
+                  _index += 1;});}},
             onStepTapped: (int index) {
               setState(() {
-                _index = index;
-              });
-            },
+                _index = index;});},
             steps: <Step>[
               Step(
-                title: const Text('Account'),
-                content: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Enter your Account Number',
-                      hintStyle: TextStyle(
-                        color: Colors.black45,
-                      )),
-                ),
-              ),
+                title: const Text('Account'), content: TextField(decoration: InputDecoration(
+                      hintText: 'Enter  Account Number', hintStyle: TextStyle(color: Colors.black45,)),)),
               const Step(
-                title: Text('Adress'),
-                content: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Enter your Account Address',
-                    hintStyle: TextStyle(
-                      color: Colors.black45,
-                    ),
-                  ),
-                ),
-              ),
+                title: Text('Adress'), content: TextField(decoration: InputDecoration(
+                    hintText: 'Enter  Account Address', hintStyle: TextStyle(color: Colors.black45,),),),),
               Step(
-                title: Text('Mobile Number'),
-                content: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Enter your Mobile Number',
-                    hintStyle: TextStyle(
-                      color: Colors.black45,
-                    ),
-                  ),
-                ),
-              ),
+                title: Text('Mobile Number'), content: TextField(decoration: InputDecoration(
+                    hintText: 'Enter  Mobile Number', hintStyle: TextStyle(
+                      color: Colors.black45,),),),),
             ],
           ),
         ],
@@ -84,17 +47,12 @@ class _StepperPageState extends State<StepperPage> {
         shape: CircleBorder(),
         onPressed: () {},
         child: Center(
-          // child: GestureDetector(onTap: () {
-          //   Navigator.of(context).pushNamed('/pr');
-          //   print('radhe');
-          // },
             child: Icon(
               Icons.menu,
               color: Colors.white,
             ),
           ),
         ),
-      ),
     );
   }
 }
